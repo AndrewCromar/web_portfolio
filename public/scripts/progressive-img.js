@@ -1,15 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var imgs = document.querySelectorAll('.progressive-img img[data-src]');
+  var divs = document.querySelectorAll('.progressive-img');
   var i = 0;
   function loadNext() {
-    if (i >= imgs.length) return;
-    var img = imgs[i++];
+    if (i >= divs.length) return;
+    var div = divs[i++];
+    var thumb = div.querySelector('img');
+    var fullSrc = thumb.src.replace('/thumbnails', '').replace('.jpg', '.png');
+    var img = document.createElement('img');
     img.onload = function() {
       img.style.opacity = '1';
       loadNext();
     };
     img.onerror = loadNext;
-    img.src = img.getAttribute('data-src');
+    img.src = fullSrc;
+    div.appendChild(img);
   }
   loadNext();
 });
