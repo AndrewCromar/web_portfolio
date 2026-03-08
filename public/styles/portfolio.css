@@ -102,12 +102,23 @@ body::before {
   gap: 0.5rem;
 }
 
-.photo-collage img {
+.progressive-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.progressive-img img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 6px;
   display: block;
+}
+
+.progressive-img img:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 @media (max-width: 600px) {
