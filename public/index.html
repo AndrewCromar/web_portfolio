@@ -28,30 +28,44 @@
       <div class="photo-collage">
         <div class="progressive-img">
           <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-1.jpg" alt="Andrew Arcade">
-          <img src="images/andrew-arcade/andrew-arcade-image-1.png" alt="Andrew Arcade">
+          <img data-src="images/andrew-arcade/andrew-arcade-image-1.png" alt="Andrew Arcade">
         </div>
         <div class="progressive-img">
           <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-2.jpg" alt="Andrew Arcade">
-          <img src="images/andrew-arcade/andrew-arcade-image-2.png" alt="Andrew Arcade">
+          <img data-src="images/andrew-arcade/andrew-arcade-image-2.png" alt="Andrew Arcade">
         </div>
         <div class="progressive-img">
           <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-3.jpg" alt="Andrew Arcade">
-          <img src="images/andrew-arcade/andrew-arcade-image-3.png" alt="Andrew Arcade">
+          <img data-src="images/andrew-arcade/andrew-arcade-image-3.png" alt="Andrew Arcade">
         </div>
         <div class="progressive-img">
           <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-4.jpg" alt="Andrew Arcade">
-          <img src="images/andrew-arcade/andrew-arcade-image-4.png" alt="Andrew Arcade">
+          <img data-src="images/andrew-arcade/andrew-arcade-image-4.png" alt="Andrew Arcade">
         </div>
         <div class="progressive-img">
           <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-5.jpg" alt="Andrew Arcade">
-          <img src="images/andrew-arcade/andrew-arcade-image-5.png" alt="Andrew Arcade">
+          <img data-src="images/andrew-arcade/andrew-arcade-image-5.png" alt="Andrew Arcade">
         </div>
         <div class="progressive-img">
           <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-6.jpg" alt="Andrew Arcade">
-          <img src="images/andrew-arcade/andrew-arcade-image-6.png" alt="Andrew Arcade">
+          <img data-src="images/andrew-arcade/andrew-arcade-image-6.png" alt="Andrew Arcade">
         </div>
       </div>
     </section>
   </main>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var imgs = document.querySelectorAll('.progressive-img img[data-src]');
+    var i = 0;
+    function loadNext() {
+      if (i >= imgs.length) return;
+      var img = imgs[i++];
+      img.onload = loadNext;
+      img.onerror = loadNext;
+      img.src = img.getAttribute('data-src');
+    }
+    loadNext();
+  });
+</script>
 </body>
 </html>
