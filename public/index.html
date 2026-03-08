@@ -27,27 +27,27 @@
       </p>
       <div class="photo-collage">
         <div class="progressive-img">
-          <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-1.jpg" alt="Andrew Arcade">
+          <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-1.jpg" alt="">
           <img data-src="images/andrew-arcade/andrew-arcade-image-1.png" alt="">
         </div>
         <div class="progressive-img">
-          <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-2.jpg" alt="Andrew Arcade">
+          <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-2.jpg" alt="">
           <img data-src="images/andrew-arcade/andrew-arcade-image-2.png" alt="">
         </div>
         <div class="progressive-img">
-          <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-3.jpg" alt="Andrew Arcade">
+          <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-3.jpg" alt="">
           <img data-src="images/andrew-arcade/andrew-arcade-image-3.png" alt="">
         </div>
         <div class="progressive-img">
-          <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-4.jpg" alt="Andrew Arcade">
+          <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-4.jpg" alt="">
           <img data-src="images/andrew-arcade/andrew-arcade-image-4.png" alt="">
         </div>
         <div class="progressive-img">
-          <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-5.jpg" alt="Andrew Arcade">
+          <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-5.jpg" alt="">
           <img data-src="images/andrew-arcade/andrew-arcade-image-5.png" alt="">
         </div>
         <div class="progressive-img">
-          <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-6.jpg" alt="Andrew Arcade">
+          <img src="images/andrew-arcade/thumbnails/andrew-arcade-image-6.jpg" alt="">
           <img data-src="images/andrew-arcade/andrew-arcade-image-6.png" alt="">
         </div>
       </div>
@@ -60,7 +60,10 @@
     function loadNext() {
       if (i >= imgs.length) return;
       var img = imgs[i++];
-      img.onload = loadNext;
+      img.onload = function() {
+        img.style.opacity = '1';
+        loadNext();
+      };
       img.onerror = loadNext;
       img.src = img.getAttribute('data-src');
     }
