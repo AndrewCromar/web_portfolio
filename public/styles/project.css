@@ -1,0 +1,30 @@
+.project {
+  margin-bottom: 3rem;
+}
+
+.project:last-child {
+  margin-bottom: 0;
+}
+
+.project h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.project .github-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #2a6cb6;
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+}
+
+.project .github-link:hover {
+  text-decoration: underline;
+}
+
+.project .description {
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
