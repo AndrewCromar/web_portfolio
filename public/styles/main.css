@@ -11,25 +11,3 @@ body {
   padding: 2rem 1rem;
   overflow-x: hidden;
 }
-
-body::before {
-  content: "Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar Andrew Cromar ";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 200vmax;
-  height: 200vmax;
-  transform: translate(-50%, -50%) rotate(-30deg);
-  pointer-events: none;
-  z-index: 0;
-  color: #ededed;
-  font-size: 1.8rem;
-  line-height: 2;
-  word-wrap: break-word;
-}
-
-@media (max-width: 600px) {
-  body {
-    padding: 1rem 0.5rem;
-  }
-}
