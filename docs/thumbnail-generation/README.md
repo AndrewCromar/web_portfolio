@@ -14,4 +14,4 @@ img.save("thumbnail.jpg", quality=30)
 ```
 ### OR
 
-Use the (thumbnail-generation.py)[thumbnail-generation.py] by placing it in the folder with the images to make copies of and running it.
+Use the (main.py)[main.py] by placing it in the folder with the images to make copies of and running it.
