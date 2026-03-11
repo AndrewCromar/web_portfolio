@@ -1,0 +1,7 @@
+Hello Claude, right now I am editing the photos to be the correct aspec ratio and have a blurred background for the extra space. Can you use css to instead fit the height of the image to the container? Idk how this will work because we basically need 4 images for each image. 1 for the bad quality image, a second to be a blurred background that is centered and fill the rest of the width for the bad quality image. And the same things but for the good quality image. Im sure you can figure this out, when your done, replace the dragon images with the one in the "for if decide to update css" subfolder, thanks.
+
+But some of the images my be taller some may be fatter so its gotta work with all sizes of image.
+
+Basically fit the image fully (width and height fit inside) then a copy of the image is expanded to fill the entire thing, placed behind, and burred to fill extra background space.
+
+Thanks.
