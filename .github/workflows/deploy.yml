@@ -40,6 +40,8 @@ jobs:
         env:
           SSHPASS: ${{ secrets.SSH_PASSWORD }}
         run: |
+          sshpass -p "$SSHPASS" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -T astartup@162.241.226.70 \
+            "mkdir -p /home3/astartup/public_html/andrewcromar/web_portfolio/public/renders"
           sshpass -p "$SSHPASS" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
             "public/renders/render.pdf" \
             astartup@162.241.226.70:/home3/astartup/public_html/andrewcromar/web_portfolio/public/renders/render.pdf
