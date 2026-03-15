@@ -11,7 +11,7 @@ pip install weasyprint PyMuPDF Pillow
 ## Usage
 
 ```bash
-python3 main.py                          # defaults: ../../public/index.html → renders/Andrew Cromar's Portfolio.pdf
+python3 main.py                          # defaults: ../../public/index.html → public/renders/Andrew Cromar's Portfolio.pdf
 python3 main.py path/to/page.html -o out.pdf
 ```
 

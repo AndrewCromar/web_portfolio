@@ -13,6 +13,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PDF export dependencies
+        run: pip install weasyprint PyMuPDF Pillow
+
+      - name: Render PDF
+        run: python3 docs/pdf-export/main.py
+
+      - name: Commit rendered PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "public/renders/Andrew Cromar's Portfolio.pdf"
+          git diff --cached --quiet || git commit -m "render portfolio PDF [skip ci]"
+          git push
+
       - name: Install sshpass
         run: sudo apt-get update && sudo apt-get install -y sshpass
 

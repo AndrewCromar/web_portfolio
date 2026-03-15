@@ -14,7 +14,7 @@ from weasyprint import CSS, HTML
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 DEFAULT_HTML = os.path.join(PROJECT_ROOT, "public", "index.html")
-DEFAULT_OUTPUT = os.path.join(PROJECT_ROOT, "renders", "Andrew Cromar's Portfolio.pdf")
+DEFAULT_OUTPUT = os.path.join(PROJECT_ROOT, "public", "renders", "Andrew Cromar's Portfolio.pdf")
 DPI = 300
 
 # Inject zero margins so weasyprint renders edge-to-edge;
