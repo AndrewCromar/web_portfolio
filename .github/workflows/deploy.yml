@@ -30,7 +30,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "public/renders/Andrew Cromar's Portfolio.pdf"
+          git add public/renders/render.pdf
           git diff --cached --quiet || git commit -m "render portfolio PDF [skip ci]"
           git push
 
