@@ -8,9 +8,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -26,18 +23,10 @@ jobs:
       - name: Render PDF
         run: python3 docs/pdf-export/main.py
 
-      - name: Commit rendered PDF
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/renders/render.pdf
-          git diff --cached --quiet || git commit -m "render portfolio PDF [skip ci]"
-          git push
-
       - name: Install sshpass
         run: sudo apt-get update && sudo apt-get install -y sshpass
 
-      - name: Deploy
+      - name: Deploy site
         env:
           SSHPASS: ${{ secrets.SSH_PASSWORD }}
         run: |
@@ -46,3 +35,11 @@ jobs:
           git pull origin main
           exit
           EOF
+
+      - name: Upload rendered PDF
+        env:
+          SSHPASS: ${{ secrets.SSH_PASSWORD }}
+        run: |
+          sshpass -p "$SSHPASS" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+            "public/renders/render.pdf" \
+            astartup@162.241.226.70:/home3/astartup/public_html/andrewcromar/web_portfolio/public/renders/render.pdf
