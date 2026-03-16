@@ -26,6 +26,17 @@
   transition: opacity 0.3s;
 }
 
+/* @media print {
+  .photo-collage {
+    align-content: stretch;
+  }
+
+  .progressive-img img {
+    height: 100%;
+    aspect-ratio: unset;
+  }
+} */
+
 @media (max-width: 600px) {
   .photo-collage {
     grid-template-columns: repeat(2, 1fr);

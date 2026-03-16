@@ -11,3 +11,10 @@ body {
   padding: 2rem 1rem;
   overflow-x: hidden;
 }
+
+@media print {
+  body {
+    padding: 0;
+    background: none;
+  }
+}

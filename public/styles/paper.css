@@ -20,10 +20,18 @@
     break-before: page;
   }
 
-  .paper > hr {
+  .paper {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+  }
+
+  /* .paper > hr {
     height: 0;
     border: none;
-  }
+  } */
 }
 
 @media (max-width: 600px) {
