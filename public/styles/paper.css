@@ -15,6 +15,17 @@
   margin: 2rem 0;
 }
 
+@media print {
+  .page-break {
+    break-before: page;
+  }
+
+  .paper > hr {
+    height: 0;
+    border: none;
+  }
+}
+
 @media (max-width: 600px) {
   .paper {
     padding: 1.5rem;
