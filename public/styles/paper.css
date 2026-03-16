@@ -27,11 +27,6 @@
     margin: 0;
     max-width: none;
   }
-
-  /* .paper > hr {
-    height: 0;
-    border: none;
-  } */
 }
 
 @media (max-width: 600px) {
